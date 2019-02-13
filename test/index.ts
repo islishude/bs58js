@@ -1,5 +1,5 @@
 import { strictEqual } from "assert";
-import encode from "..";
+import bs58 from "../src";
 
 const testData = [
   {
@@ -46,6 +46,10 @@ const testData = [
     res: "Rt5zm",
   },
   {
+    buf: Buffer.from("0000", "hex"),
+    res: "11",
+  },
+  {
     buf: Buffer.from("00000000000000000000", "hex"),
     res: "1111111111",
   },
@@ -66,7 +70,8 @@ const testData = [
 ];
 
 for (const { buf, res } of testData) {
-  strictEqual(encode(buf), res);
+  strictEqual(bs58.encode(buf), res);
+  strictEqual(bs58.decode(res).toString("hex"), buf.toString("hex"));
 }
 
 console.log("Test successful!");

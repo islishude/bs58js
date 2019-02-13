@@ -8,6 +8,11 @@
     "moduleResolution": "node",
     "strict": true,
     "alwaysStrict": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "declarationDir": "types",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["src"]
 }

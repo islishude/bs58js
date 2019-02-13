@@ -7,9 +7,10 @@
     "build": "tsc -p tsconfig.json",
     "test": "ts-node test/*.ts"
   },
+  "types": "types",
   "files": [
-    "index.js",
-    "index.d.ts"
+    "dist/index.js",
+    "types/index.d.ts"
   ],
   "keywords": [
     "base58"
