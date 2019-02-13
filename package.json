@@ -1,7 +1,7 @@
 {
   "name": "getbs58",
   "version": "1.0.0",
-  "description": "Base58 by BigInt",
+  "description": "Package getbs58 creates base58 encoder/decoder functions by BigInt",
   "main": "index.js",
   "scripts": {
     "build": "tslint -p tsconfig.json && tsc",
