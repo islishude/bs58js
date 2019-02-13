@@ -60,5 +60,4 @@ const decode = (raw: string): Buffer => {
   return Buffer.from(res, "hex");
 };
 
-const bs58 = { decode, encode };
-export default bs58;
+export default { decode, encode };
