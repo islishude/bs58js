@@ -46,10 +46,6 @@ const testData = [
     res: "Rt5zm",
   },
   {
-    buf: Buffer.from("0000", "hex"),
-    res: "11",
-  },
-  {
     buf: Buffer.from("00000000000000000000", "hex"),
     res: "1111111111",
   },
