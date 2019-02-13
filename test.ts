@@ -1,5 +1,5 @@
 import { strictEqual } from "assert";
-import bs58 from "../src";
+import bs58 from ".";
 
 const testData = [
   {

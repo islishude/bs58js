@@ -4,13 +4,13 @@
   "description": "Base58 by BigInt",
   "main": "index.js",
   "scripts": {
-    "build": "tslint -p tsconfig.json && rm -rf dist types && tsc",
-    "test": "ts-node test/*.ts"
+    "build": "tslint -p tsconfig.json && tsc",
+    "test": "ts-node test.ts"
   },
-  "types": "types",
+  "types": "index.d.ts",
   "files": [
-    "dist",
-    "types"
+    "index.js",
+    "index.d.ts"
   ],
   "keywords": [
     "base58"
