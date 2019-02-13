@@ -45,8 +45,11 @@ const decode = (raw) => {
             }
         }
     }
+    if (bn === zero) {
+        return Buffer.from(leader, "hex");
+    }
     let res = leader + bn.toString(16);
-    if (res.length % 2 !== 0 && bn > zero) {
+    if (res.length % 2 !== 0) {
         res = "0" + res;
     }
     return Buffer.from(res, "hex");
