@@ -1,0 +1,28 @@
+{
+  "name": "getbs58",
+  "version": "1.0.0",
+  "description": "Base58 by BigInt",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "ts-node test/*.ts"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "base58"
+  ],
+  "author": "islishude",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^11.9.3",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=10.4.0"
+  }
+}
