@@ -67,5 +67,3 @@ for (const { raw, res } of testData) {
   strictEqual(bs58.encode(raw), res);
   strictEqual(bs58.decode(res), raw);
 }
-
-console.log("Test successful!");
