@@ -2,9 +2,14 @@ const table = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 const zero = 0n;
 const base = 58n;
 
-const encode = (buf: Buffer) => {
-  const hex = buf.toString("hex");
-  let x = hex.length === 0 ? zero : BigInt("0x" + hex);
+const encode = (hex: string) => {
+  let x =
+    hex.length === 0
+      ? zero
+      : hex.startsWith("0x") || hex.startsWith("0X")
+      ? BigInt(hex)
+      : BigInt("0x" + hex);
+
   let res = "";
 
   while (x > zero) {
@@ -22,13 +27,11 @@ const encode = (buf: Buffer) => {
   return res;
 };
 
-const decode = (raw: string): Buffer => {
-  if (raw.length === 0) {
-    return Buffer.from("");
-  }
+const decode = (raw: string): string => {
   let leader = "";
   let bn = 0n;
   let isBreak = false;
+
   for (let i = 0; i < raw.length; i++) {
     const curChar = raw.charAt(i);
     const weight = table.indexOf(curChar);
@@ -50,14 +53,14 @@ const decode = (raw: string): Buffer => {
   }
 
   if (bn === zero) {
-    return Buffer.from(leader, "hex");
+    return leader;
   }
 
   let res = leader + bn.toString(16);
   if (res.length % 2 !== 0) {
     res = "0" + res;
   }
-  return Buffer.from(res, "hex");
+  return res;
 };
 
 export default { decode, encode };
