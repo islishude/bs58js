@@ -1,4 +1,3 @@
-import { strictEqual } from "assert";
 import bs58 from ".";
 
 const testData = [
@@ -57,6 +56,12 @@ const testData = [
     res: "16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS",
   },
 ];
+
+const strictEqual = (v0: any, v1: any) => {
+  if (!Object.is(v0, v1)) {
+    throw new Error(v0 + " is not equal with " + v1);
+  }
+};
 
 for (const { raw, res } of testData) {
   strictEqual(bs58.encode(raw), res);
