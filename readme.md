@@ -1,3 +1,5 @@
+## getbs58 [![Build Status](https://travis-ci.org/isLishude/bs58js.svg?branch=master)](https://travis-ci.org/isLishude/bs58js)
+
 Package getbs58 creates base58 encoder/decoder functions by BigInt.
 
 ## Usage
